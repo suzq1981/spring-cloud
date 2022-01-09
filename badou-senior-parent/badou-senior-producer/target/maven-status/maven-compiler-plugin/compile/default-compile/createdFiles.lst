@@ -1,0 +1,11 @@
+com\badou\senior\producer\entity\User$UserBuilder.class
+com\badou\senior\producer\service\DepartmentService.class
+com\badou\senior\producer\ProducerApplication.class
+com\badou\senior\producer\entity\Department$DepartmentBuilder.class
+com\badou\senior\producer\entity\Department.class
+com\badou\senior\producer\entity\User.class
+com\badou\senior\producer\controller\EurekaController.class
+com\badou\senior\producer\service\impl\DepartmentServiceImpl.class
+com\badou\senior\producer\mapper\DepartmentMapper.class
+com\badou\senior\producer\controller\UserController.class
+com\badou\senior\producer\utils\ResultUtils.class

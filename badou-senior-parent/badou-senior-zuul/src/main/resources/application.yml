@@ -1,0 +1,68 @@
+
+server:
+  port: 2000
+  
+spring:
+  application:
+    name: badou-cloud-zuul
+    security:
+    user:
+      name: william
+      password: godson
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    httptrace:
+      enabled: true
+      
+logging:
+  level:
+    org.springframework.cloud.netflix.zuul: debug
+
+#spring默认ribbon的hystrix的配置时1秒，我们的服务有时都无法满足，特别是大文件上传时，所以要改变zuul的断路器时间
+ribbon:
+  ReadTimeout: 5000
+  SocketTimeout: 5000
+   
+zuul:
+  host:
+    connect-timeout-millis: 5000
+    socket-timeout-mills: 5000
+  #设置所有的服务都不使用默认的反向代理
+  ignored-services: '*'
+  #/actuator/routes?format=details
+  prefix: /api
+  routes:
+    #单独设置某个服务的反向代理规则
+    badou-cloud-consumer: /consumer/**
+    badou-cloud-producer: /producer/**
+
+eureka:
+  instance:
+    app-group-name: zuul-group
+    appname: ${spring.application.name}
+    prefer-ip-address: true
+    #续约时间间隔，默认30秒
+    lease-renewal-interval-in-seconds: 30
+    #表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+    lease-expiration-duration-in-seconds: 90
+    metadata-map:
+      cookie-time: 60s
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      #defaultZone: http://william:godson@192.168.0.200:6781/eureka/,http://william:godson@192.168.0.201:6781/eureka/,http://william:godson@192.168.0.202:6781/eureka/
+      defaultZone: http://william:godson@192.168.0.200:6781/eureka/

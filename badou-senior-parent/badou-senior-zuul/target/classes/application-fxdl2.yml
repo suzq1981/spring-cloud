@@ -1,0 +1,17 @@
+
+zuul:
+  #设置所有的服务都不使用默认的反向代理,如何不设置，默认的代理和配置的代理都会生效
+  ignored-services: '*'
+  routes:
+    #p:可以任意命名，只要不重复
+    p:
+      #代理路径
+      path: /pdc/**
+      #需要反向代理的serviceId
+      serviceId: badou-cloud-producer
+      #可以不是用serviceId,而是使用需要反向代理的服务地址
+      #使用这种url的方式将不会支持Hystrix断路器和Ribbon负载均衡
+      #url: http://127.0.0.1:9908
+    c:
+      path: /csm/**
+      serviceId: badou-cloud-consumer

@@ -1,0 +1,74 @@
+server:
+  port: 9002
+  
+spring:
+  application:
+    name: badou-cloud-consumer
+  
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    httptrace:
+      enabled: true
+#预加载配置,默认为懒加载
+ribbon:
+  readTimeout: 60000
+  connectTimeout: 120000
+  eager-load:
+    enabled: true
+    clients:
+    - badou-cloud-producer
+
+badou-cloud-producer:
+  ribbon:
+    # 代表Ribbon使用的负载均衡策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+    # Max number of retries on the same server (excluding the first try)
+    MaxAutoRetries: 1
+    # Max number of next servers to retry (excluding the first server)
+    MaxAutoRetriesNextServer: 1
+    # Whether all operations can be retried for this client
+    OkToRetryOnAllOperations: true
+    # Interval to refresh the server list from the source
+    ServerListRefreshInterval: 2000
+    # Connect timeout used by Apache HttpClient
+    ConnectTimeout: 3000
+    # Read timeout used by Apache HttpClient
+    ReadTimeout: 3000
+
+logging:
+  level:
+    '[com.badou.senior.consumer.feign.UserFeignClient]': DEBUG
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  instance:
+    app-group-name: consumer-group
+    appname: ${spring.application.name}
+    prefer-ip-address: true
+    #续约时间间隔，默认30秒
+    lease-renewal-interval-in-seconds: 30
+    #表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+    lease-expiration-duration-in-seconds: 90
+    metadata-map:
+      cookie-time: 60s
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      #defaultZone: http://william:godson@192.168.0.200:6781/eureka/,http://william:godson@192.168.0.201:6781/eureka/,http://william:godson@192.168.0.202:6781/eureka/
+      defaultZone: http://william:godson@192.168.0.200:6781/eureka/

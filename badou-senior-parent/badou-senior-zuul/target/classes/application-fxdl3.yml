@@ -1,0 +1,18 @@
+zuul: 
+  routes:
+    #单独设置某一个服务的反向代理规则,名字可以随便,只要不重复即可
+    p: 
+      #代理路径
+      path: /merge/**
+      #此处的serviceId随便写
+      serviceId: cloud-merge
+ribbon:
+  eureka:
+    #使用本地服务列表的方式,所以禁用ribbon的Eureka
+    enabled: false  
+cloud-merge:  #此处必须为zuul.routes.p.serviceId
+  ribbon:
+    #设置ribbon的服务列表,用于zuul的负载均衡
+    listOfServers: http://192.168.0.200:9001,http://192.168.0.200:9002
+      
+ 

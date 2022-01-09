@@ -1,0 +1,13 @@
+com\badou\senior\consumer\ConsumerApplication.class
+com\badou\senior\consumer\feign\UserFeignClient.class
+com\badou\senior\consumer\controller\OrderController.class
+com\badou\senior\consumer\entity\Order$OrderBuilder.class
+com\badou\senior\consumer\controller\UserController.class
+com\badou\senior\consumer\feign\UserFeignClientFallBack.class
+com\badou\senior\config\BadouFeignClientsConfiguration.class
+com\badou\senior\consumer\controller\RibbonController.class
+com\badou\senior\consumer\entity\User.class
+com\badou\senior\config\BadouRibbonClientConfiguration.class
+com\badou\senior\consumer\entity\User$UserBuilder.class
+com\badou\senior\consumer\entity\Order.class
+com\badou\senior\consumer\utils\ResultUtils.class
