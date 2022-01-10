@@ -1,7 +1,24 @@
 spring:
   cloud:
     config:
+      #config server 的用户名和密码(服务端开启安全验证)
+      username: william
+      password: godson
       label: main
-      uri: http://localhost:1000
       name: consumer
       profile: prod
+      #uri的安全验证
+      #uri: http://william:godson@localhost:1000
+      #uri: http://localhost:1000
+      #默认情况下是使用uri方式
+      discovery:
+        enabled: true
+        service-id: BADOU-CLOUD-CONFIG
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      #defaultZone: http://william:godson@192.168.0.200:6781/eureka/,http://william:godson@192.168.0.201:6781/eureka/,http://william:godson@192.168.0.202:6781/eureka/
+      defaultZone: http://william:godson@192.168.0.200:6781/eureka/

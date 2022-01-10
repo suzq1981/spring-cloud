@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: badou-cloud-config
+  security:
+    user:
+      name: william
+      password: godson
   cloud:
     config:
       enabled: true
@@ -13,7 +17,17 @@ spring:
           uri: https://github.com/suzq1981/config.git
           search-paths: 
           default-label: main
-    
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    httptrace:
+      enabled: true  
 
 eureka:
   instance:
