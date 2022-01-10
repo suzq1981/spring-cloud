@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: DELL
+Build-Jdk: 17.0.1
+Implementation-Title: badou-senior-config
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.badou.senior
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/badou-senior-parent/badou-senior-config
+Created-By: Maven Integration for Eclipse
+

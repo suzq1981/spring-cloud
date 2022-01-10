@@ -76,5 +76,6 @@
 		<module>badou-senior-eureka</module>
 		<module>badou-senior-turbine</module>
 		<module>badou-senior-zuul</module>
+		<module>badou-senior-config</module>
 	</modules>
 </project>
