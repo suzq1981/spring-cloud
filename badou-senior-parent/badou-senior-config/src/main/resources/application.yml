@@ -10,8 +10,8 @@ spring:
       label: main
       server:
         git:
-          uri: https://github.com/suzq1981/spring-cloud/tree/main/badou-senior-parent/config-files
-          search-paths: /**
+          uri: https://github.com/suzq1981/config.git
+          search-paths: 
           default-label: main
     
 
