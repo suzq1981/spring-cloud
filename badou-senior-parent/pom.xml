@@ -77,5 +77,6 @@
 		<module>badou-senior-turbine</module>
 		<module>badou-senior-zuul</module>
 		<module>badou-senior-config</module>
+		<module>badou-consul-order</module>
 	</modules>
 </project>
