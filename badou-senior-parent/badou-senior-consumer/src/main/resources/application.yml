@@ -29,6 +29,7 @@ ribbon:
     clients:
     - badou-cloud-producer
 
+
 badou-cloud-producer:
   ribbon:
     # 代表Ribbon使用的负载均衡策略
