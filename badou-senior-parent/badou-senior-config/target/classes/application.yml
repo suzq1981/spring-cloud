@@ -4,6 +4,15 @@ server:
 spring:
   application:
     name: badou-cloud-config
+  cloud:
+    config:
+      enabled: true
+      label: main
+      server:
+        git:
+          uri: https://github.com/suzq1981/spring-cloud/tree/main/badou-senior-parent/config-files
+          search-paths: /**
+          default-label: main
     
 
 eureka:
