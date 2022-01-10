@@ -22,8 +22,8 @@ management:
       enabled: true
 #预加载配置,默认为懒加载
 ribbon:
-  readTimeout: 60000
-  connectTimeout: 120000
+  ReadTimeout: 5000
+  SocketTimeout: 5000
   eager-load:
     enabled: true
     clients:
