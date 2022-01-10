@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      label: main
+      uri: http://localhost:1000
+      name: consumer
+      profile: prod
