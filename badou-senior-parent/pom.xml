@@ -78,5 +78,6 @@
 		<module>badou-senior-zuul</module>
 		<module>badou-senior-config</module>
 		<module>badou-consul-order</module>
+		<module>badou-consul-user</module>
 	</modules>
 </project>
