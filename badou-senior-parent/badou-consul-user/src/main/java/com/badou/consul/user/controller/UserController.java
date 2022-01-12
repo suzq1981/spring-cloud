@@ -22,7 +22,7 @@ public class UserController {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if(System.currentTimeMillis() - startTime > 5000) {
+			if(System.currentTimeMillis() - startTime > 3000) {
 				break;
 			}
 		}

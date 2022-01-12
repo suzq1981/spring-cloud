@@ -17,7 +17,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 		//deptMapper.createDept(sale);
 		long start = System.currentTimeMillis();
 		while (true) {
-			if (System.currentTimeMillis() - start > 5000) {
+			if (System.currentTimeMillis() - start > 3000) {
 				break;
 			}
 		}

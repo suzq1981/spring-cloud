@@ -5,6 +5,8 @@ spring:
     user:
       name: william
       password: godson
+  profiles:
+    active: es1
 
 info:
   app:

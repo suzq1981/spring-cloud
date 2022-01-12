@@ -33,6 +33,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 
@@ -80,5 +81,7 @@
 		<module>badou-senior-config</module>
 		<module>badou-consul-order</module>
 		<module>badou-consul-user</module>
+		<module>badou-senior-nacos</module>
+		<module>badou-senior-admin</module>
 	</modules>
 </project>
