@@ -1,0 +1,11 @@
+
+server:
+  port: 8200
+  
+spring:
+  application:
+    name: badou-consul-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.200:8848,192.168.0.201:8848,192.168.0.202:8848
