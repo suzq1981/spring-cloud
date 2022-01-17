@@ -1,6 +1,0 @@
-server:
-  port: 7100
-
-spring:
-  application:
-    name: badou-cloud-admin
