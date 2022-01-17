@@ -25,7 +25,6 @@ hs_err_pid*
 /**/.idea
 /**/target
 /**/.settings
-.project
 /**/.project
 /**/.factorypath
 /**/.classpath
