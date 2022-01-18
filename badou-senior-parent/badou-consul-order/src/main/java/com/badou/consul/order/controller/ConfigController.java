@@ -14,26 +14,28 @@ import com.badou.consul.order.entity.StudentConfig;
 @RefreshScope
 public class ConfigController {
 
-    @Value("${myName}")
-    private String myName;
+	@Value("${myName}")
+	private String myName;
 
-    @Autowired
-    private StudentConfig studentConfig;
+	@Autowired
+	private StudentConfig studentConfig;
 
-    @RequestMapping("/myname")
-    public String testHello() {
-        System.out.println("Good Job. Godson");
-        System.out.println("my name is : " + myName);
-        System.out.println("Too large");
-        return myName;
-        
-    }
+	@RequestMapping("/myname")
+	public String testHello() {
+		System.out.println("William is Godson");
+		System.out.println("my name is : " + myName);
+		return myName;
 
-    @RequestMapping("/config")
-    public String testConfig() {
-        System.out.println("Good job2 william");
-        System.out.println(studentConfig.toString());
-        return studentConfig.toString();
-    }
+	}
+
+	@RequestMapping("/config")
+	public String testConfig() {
+		for (int i = 0; true; i++) {
+			if (i > 10)
+				break;
+		}
+		System.out.println(studentConfig.toString());
+		return studentConfig.toString();
+	}
 
 }
