@@ -22,16 +22,13 @@ public class ConfigController {
 
     @RequestMapping("/myname")
     public String testHello() {
-        System.out.println("Good Job. Godson");
         System.out.println("my name is : " + myName);
-        System.out.println("Too large");
         return myName;
         
     }
 
     @RequestMapping("/config")
     public String testConfig() {
-        System.out.println("Good job2 william");
         System.out.println(studentConfig.toString());
         return studentConfig.toString();
     }
