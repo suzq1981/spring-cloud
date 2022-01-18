@@ -22,7 +22,7 @@ public class ConfigController {
 
     @RequestMapping("/myname")
     public String testHello() {
-        System.out.println("Good Job.");
+        System.out.println("Good Job. Godson");
         System.out.println("my name is : " + myName);
         return myName;
         
@@ -30,7 +30,7 @@ public class ConfigController {
 
     @RequestMapping("/config")
     public String testConfig() {
-        System.out.println("Good job2");
+        System.out.println("Good job2 william");
         System.out.println(studentConfig.toString());
         return studentConfig.toString();
     }
