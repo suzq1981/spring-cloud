@@ -28,6 +28,7 @@ public class ConfigController {
 
     @RequestMapping("/config")
     public String testConfig() {
+        System.out.println("Test");
         System.out.println(studentConfig.toString());
         return studentConfig.toString();
     }
