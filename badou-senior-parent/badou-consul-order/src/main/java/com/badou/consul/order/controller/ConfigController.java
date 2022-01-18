@@ -22,7 +22,6 @@ public class ConfigController {
 
 	@RequestMapping("/myname")
 	public String testHello() {
-		System.out.println("William is Godson");
 		System.out.println("my name is : " + myName);
 		return myName;
 
